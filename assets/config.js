@@ -3,14 +3,14 @@ window.SITE_CONFIG = {
   siteName: 'TakeHomeSalaryCalc.com',
   title: 'Net Salary Calculator',
   partnershipsEmail: 'partnerships@calc-hq.com',
-  buildDate: '2026-03-13',
+  buildDate: '2026-05-02',
   taxYearLabel: '2025 tax-year estimate',
   adsensePublisherId: 'ca-pub-7744853829365165',
   federalTaxData: {
     standardDeduction: {
-      single: 15000,
-      married: 30000,
-      hoh: 22500
+      single: 15750,
+      married: 31500,
+      hoh: 25000
     },
     brackets: {
       single: [
@@ -44,9 +44,10 @@ window.SITE_CONFIG = {
     fica: {
       socialSecurityRate: 0.062,
       socialSecurityWageBase: 176100,
-      medicareRate: 0.0145
+      medicareRate: 0.0145,
+      additionalMedicareRate: 0.009,
+      additionalMedicareThreshold: 200000
     }
-  }
-,
+  },
   adsActive: false
 };

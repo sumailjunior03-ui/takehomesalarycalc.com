@@ -1,237 +1,72 @@
-:root {
-  --bg: #f5f8fc;
-  --panel: #ffffff;
-  --panel-2: #f8fbff;
-  --text: #13243b;
-  --muted: #5f7088;
-  --border: #d7e2f0;
-  --accent: #1f5fbf;
-  --accent-2: #163b73;
-  --success: #0f7a43;
+/* TakeHomeSalaryCalc.com — locked framework CSS */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,sans-serif;color:#1a1a1a;background:#f7f7f7;overflow-x:hidden;padding-bottom:env(safe-area-inset-bottom,0);line-height:1.6}
+.wrap,.container{max-width:800px;margin:0 auto;padding:0 16px}
+
+/* Header */
+.site-header{background:#1a1a2e;color:#fff;padding:14px 0}
+.header-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.brand{color:#fff;text-decoration:none;font-size:18px;font-weight:700}
+.header-nav a{color:#ccc;text-decoration:none;font-size:14px;margin-left:12px}
+.header-nav a.active,.header-nav a:hover{color:#fff}
+
+/* Mobile stacking */
+@media(max-width:600px){
+  .header-inner{flex-direction:column;align-items:flex-start}
+  .header-nav a{margin-left:0;margin-right:12px;font-size:14px}
+  .header-nav{padding-top:6px}
 }
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.6;
-}
-a { color: var(--accent); text-decoration: none; }
-a:hover { text-decoration: underline; }
-.container {
-  width: min(1080px, calc(100% - 32px));
-  margin: 0 auto;
-}
-.site-header {
-  border-bottom: 1px solid var(--border);
-  background: #ffffff;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-}
-.header-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  min-height: 72px;
-}
-.brand {
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  color: var(--accent-2);
-}
-.header-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px 18px;
-}
-.header-nav a {
-  color: var(--muted);
-  font-size: 0.95rem;
-}
-.header-nav a:hover,
-.header-nav a:focus {
-  color: var(--accent-2);
-}
-.hero {
-  padding: 28px 0 24px;
-}
-.hero-grid,
-.footer-grid,
-.results-grid {
-  display: grid;
-  gap: 20px;
-}
-.hero-grid {
-  grid-template-columns: 1.05fr 0.95fr;
-}
-.results-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-.card,
-.section-card {
-  background: var(--panel);
-  border: 1px solid var(--border);
-  border-radius: 18px;
-  padding: 24px;
-  box-shadow: 0 10px 25px rgba(16, 42, 67, 0.06);
-}
-h1, h2, h3, h4 {
-  line-height: 1.2;
-  letter-spacing: -0.02em;
-  margin-top: 0;
-  color: var(--accent-2);
-}
-h1 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 14px; }
-h2 { font-size: 1.35rem; margin-bottom: 14px; }
-h3 { font-size: 1.1rem; }
-p { margin: 0 0 14px; }
-.muted { color: var(--muted); }
-label {
-  display: block;
-  font-weight: 600;
-  margin-bottom: 8px;
-  color: var(--accent-2);
-}
-input, select, button {
-  width: 100%;
-  font: inherit;
-  border-radius: 12px;
-}
-input, select {
-  padding: 12px 14px;
-  border: 1px solid var(--border);
-  background: #fff;
-  color: var(--text);
-  margin-bottom: 16px;
-}
-input:focus, select:focus {
-  outline: 3px solid rgba(31, 95, 191, 0.15);
-  border-color: var(--accent);
-}
-.checkbox-row {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  margin: 4px 0 16px;
-}
-.checkbox-row input {
-  width: auto;
-  margin: 4px 0 0;
-}
-.checkbox-row label {
-  margin: 0;
-  font-weight: 500;
-  color: var(--text);
-}
-button {
-  padding: 13px 16px;
-  border: 0;
-  background: var(--accent);
-  color: #fff;
-  font-weight: 700;
-  cursor: pointer;
-}
-button:hover { background: #184d9c; }
-.result-box {
-  background: var(--panel-2);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 16px;
-}
-.result-label {
-  display: block;
-  font-size: 0.92rem;
-  color: var(--muted);
-  margin-bottom: 8px;
-}
-.result-value {
-  display: block;
-  font-weight: 800;
-  font-size: 1.3rem;
-  color: var(--accent-2);
-}
-.notice {
-  font-size: 0.95rem;
-  color: var(--muted);
-  margin-top: 16px;
-}
-.ad-slot {
-  min-height: 90px;
-  border: 1px dashed var(--border);
-  border-radius: 16px;
-  display: grid;
-  place-items: center;
-  color: var(--muted);
-  background: #fbfdff;
-}
-.breadcrumbs {
-  font-size: 0.92rem;
-  color: var(--muted);
-  margin-bottom: 12px;
-}
-.example-table,
-.faq-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-.example-table th,
-.example-table td,
-.faq-table th,
-.faq-table td {
-  border: 1px solid var(--border);
-  padding: 12px;
-  text-align: left;
-  vertical-align: top;
-}
-.example-table th,
-.faq-table th {
-  background: var(--panel-2);
-  color: var(--accent-2);
-}
-.list-tight {
-  margin: 0;
-  padding-left: 18px;
-}
-.list-tight li { margin-bottom: 8px; }
-.site-footer {
-  margin-top: 40px;
-  border-top: 1px solid var(--border);
-  background: #ffffff;
-}
-.footer-grid {
-  grid-template-columns: 1fr 1.5fr 0.9fr;
-  padding: 28px 0 8px;
-}
-.footer-nav-links,
-.footer-links {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.footer-nav-links li,
-.footer-links li {
-  margin-bottom: 12px;
-}
-.footer-links li a {
-  display: inline-block;
-  margin-bottom: 2px;
-}
-.footer-links li span,
-.footer-empty,
-.footer-meta {
-  display: block;
-  color: var(--muted);
-  font-size: 0.94rem;
-}
-.footer-meta {
-  padding: 0 0 24px;
-  margin: 0;
-}
-@media (max-width: 860px) {
-  .hero-grid, .footer-grid, .results-grid { grid-template-columns: 1fr; }
-  .header-inner { align-items: flex-start; flex-direction: column; padding: 14px 0; }
-}
+
+/* Ad collapse */
+.adsense-unit{height:0;overflow:hidden;margin:0}
+.adsense-unit.active{height:auto;overflow:visible;margin:16px 0}
+
+/* Main */
+main{padding:24px 0}
+h1{font-size:1.5rem;margin-bottom:16px}
+h2{font-size:1.2rem;margin:24px 0 10px}
+p{margin-bottom:12px}
+.section-card{background:#fff;border-radius:8px;padding:20px;margin-bottom:16px;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+
+/* Calculator form */
+.calc-form{display:grid;gap:12px}
+.form-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.form-row label{min-width:140px;font-weight:600;font-size:.9rem}
+.form-row input,.form-row select{flex:1;min-width:120px;padding:8px;border:1px solid #ccc;border-radius:4px;font-size:.95rem}
+button[type=submit]{background:#1a1a2e;color:#fff;border:none;padding:10px 24px;border-radius:4px;cursor:pointer;font-size:1rem;margin-top:8px}
+button[type=submit]:hover{background:#2a2a4e}
+
+/* Results */
+.result-box{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid #eee}
+.result-box:last-child{border-bottom:none}
+.result-label{font-size:.9rem;color:#555}
+.result-value{font-weight:700;font-size:1rem;color:#1a1a2e}
+.result-box.highlight{background:#f0f7ff;border-radius:4px;padding:10px 8px;margin-top:4px}
+.notice{font-size:.8rem;color:#888;margin-top:12px;font-style:italic}
+
+/* Authority content */
+.page-copy h2{margin-top:28px;margin-bottom:8px;color:#1a1a2e}
+.page-copy ul,.page-copy ol{margin:8px 0 12px 20px}
+.page-copy li{margin-bottom:6px}
+.breakdown-line{padding:6px 0;border-bottom:1px solid #f0f0f0;font-size:.95rem}
+.breakdown-line strong{display:inline-block;min-width:220px}
+.breakdown-total{font-weight:700;font-size:1.05rem;padding-top:8px;border-top:2px solid #1a1a2e;margin-top:4px}
+
+/* Footer */
+.site-footer{background:#1a1a2e;color:#ccc;padding:32px 0;margin-top:40px}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:24px;margin-bottom:20px}
+.site-footer h2{color:#fff;font-size:.9rem;margin-bottom:8px}
+.site-footer a{color:#8ab4f8;text-decoration:none;font-size:.85rem}
+.site-footer ul{list-style:none;padding:0}
+.site-footer li{margin-bottom:4px}
+.footer-meta{font-size:.75rem;color:#888;text-align:center;margin-top:16px}
+.footer-nav-links a{color:#8ab4f8}
+
+/* Page-copy support pages */
+.page-copy{padding:24px 0}
+.page-copy h1{font-size:1.4rem;margin-bottom:16px}
+
+/* Related calculators */
+#related-calculators{padding:8px 0;font-size:.9rem}
+#related-calculators a{color:#1a1a2e;text-decoration:none;font-weight:500}
+#related-calculators a:hover{text-decoration:underline}

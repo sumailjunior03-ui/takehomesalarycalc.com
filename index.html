@@ -2,209 +2,190 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Take-Home Salary Calculator | TakeHomeSalaryCalc.com</title>
-  <meta name="description" content="Estimate annual, monthly, bi-weekly, and weekly take-home salary after U.S. federal taxes and optional FICA.">
+  <meta name="description" content="See what actually hits your bank account after federal taxes, FICA, and deductions — and why your paycheck is lower than your salary.">
   <link rel="canonical" href="https://takehomesalarycalc.com/">
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="index,follow">
   <meta name="google-adsense-account" content="ca-pub-7744853829365165">
   <meta property="og:title" content="Take-Home Salary Calculator | TakeHomeSalaryCalc.com">
-  <meta property="og:description" content="Estimate annual, monthly, bi-weekly, and weekly take-home salary after U.S. federal taxes and optional FICA.">
+  <meta property="og:description" content="See what actually hits your bank account after federal taxes, FICA, and deductions.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://takehomesalarycalc.com/">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7744853829365165" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=takehome-0502">
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Net Salary Calculator",
-  "url": "https://takehomesalarycalc.com/",
-  "applicationCategory": "FinanceApplication",
-  "operatingSystem": "Any",
-  "description": "Estimate annual net salary and per-paycheck take-home pay after U.S. federal taxes, FICA, retirement contributions, health insurance, and other paycheck deductions.",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  }
+  "@context":"https://schema.org",
+  "@type":"WebApplication",
+  "name":"Take-Home Salary Calculator",
+  "url":"https://takehomesalarycalc.com/",
+  "applicationCategory":"FinanceApplication",
+  "operatingSystem":"All",
+  "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+  "description":"Estimate take-home salary after federal taxes, FICA, and deductions."
 }
 </script>
 </head>
 <body>
 <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="/">TakeHomeSalaryCalc.com</a>
-      <div data-site-header-nav></div>
-    </div>
-  </header>
+  <div class="container header-inner">
+    <a class="brand" href="/">TakeHomeSalaryCalc.com</a>
+    <div data-site-header-nav></div>
+  </div>
+</header>
+
 <main class="container">
-    <section class="hero">
-      <div class="breadcrumbs">Home / Calculator</div>
-      <div class="hero-grid">
-        <div class="card">
-          <h1>Net Salary Calculator</h1>
-          <p class="muted">Estimate what salary turns into after U.S. federal tax, FICA, retirement contributions, health insurance, and other paycheck deductions. This version uses a <span data-tax-year-label>2025 tax-year estimate</span> and runs locally in your browser.</p>
-          <ins class="adsbygoogle ad-slot" data-ad-client="" data-ad-slot="" data-ad-format="auto" data-full-width-responsive="true" aria-label="Advertisement"></ins>
-        </div>
-        <div class="card">
-          <h2>Calculator Tool</h2>
-          <form id="calculatorForm">
-            <div>
-              <label for="annualSalary">Annual salary (USD)</label>
-              <input id="annualSalary" name="annualSalary" type="number" min="0" step="100" value="90000">
-            </div>
-            <div>
-              <label for="filingStatus">Filing status</label>
-              <select id="filingStatus" name="filingStatus">
-                <option value="single">Single</option>
-                <option value="married">Married filing jointly</option>
-                <option value="hoh">Head of household</option>
-              </select>
-            </div>
-            <div>
-              <label for="payFrequency">Pay frequency</label>
-              <select id="payFrequency" name="payFrequency">
-                <option value="biweekly">Bi-weekly (26 paychecks)</option>
-                <option value="semimonthly">Semi-monthly (24 paychecks)</option>
-                <option value="weekly">Weekly (52 paychecks)</option>
-                <option value="monthly">Monthly (12 paychecks)</option>
-              </select>
-            </div>
-            <div>
-              <label for="retirementPercent">Traditional retirement contribution (%)</label>
-              <input id="retirementPercent" name="retirementPercent" type="number" min="0" step="0.1" value="6">
-            </div>
-            <div>
-              <label for="monthlyHealth">Monthly health insurance deduction (USD)</label>
-              <input id="monthlyHealth" name="monthlyHealth" type="number" min="0" step="1" value="150">
-            </div>
-            <div>
-              <label for="otherPretaxAnnual">Other annual pre-tax deductions (USD)</label>
-              <input id="otherPretaxAnnual" name="otherPretaxAnnual" type="number" min="0" step="1" value="1200">
-            </div>
-            <div>
-              <label for="postTaxPerPaycheck">Other post-tax deductions per paycheck (USD)</label>
-              <input id="postTaxPerPaycheck" name="postTaxPerPaycheck" type="number" min="0" step="1" value="35">
-            </div>
-            <button type="submit">Calculate net salary</button>
-          </form>
-        </div>
-      </div>
-    </section>
+  <div class="adsense-unit" data-active="false" aria-label="Ad slot (inactive)"></div>
 
-    <section>
-      <div class="section-card">
-        <h2>Estimated Results</h2>
-        <div class="results-grid">
-          <div class="result-box"><span class="result-label">Estimated federal tax</span><span id="estimatedFederalTax" class="result-value">$0.00</span></div>
-          <div class="result-box"><span class="result-label">Estimated FICA</span><span id="estimatedFica" class="result-value">$0.00</span></div>
-          <div class="result-box"><span class="result-label">Retirement contribution</span><span id="estimatedRetirement" class="result-value">$0.00</span></div>
-          <div class="result-box"><span class="result-label">Health insurance deduction</span><span id="estimatedHealthInsurance" class="result-value">$0.00</span></div>
-          <div class="result-box"><span class="result-label">Other pre-tax deductions</span><span id="estimatedOtherPretax" class="result-value">$0.00</span></div>
-          <div class="result-box"><span class="result-label">Other post-tax deductions</span><span id="estimatedPostTax" class="result-value">$0.00</span></div>
-          <div class="result-box"><span class="result-label">Estimated net annual salary</span><span id="estimatedNetAnnual" class="result-value">$0.00</span></div>
-          <div class="result-box"><span class="result-label">Estimated net monthly salary</span><span id="estimatedNetMonthly" class="result-value">$0.00</span></div>
-          <div class="result-box"><span id="perPaycheckLabel" class="result-label">Estimated net pay per bi-weekly paycheck</span><span id="estimatedNetPerPaycheck" class="result-value">$0.00</span></div>
-        </div>
-        <p class="notice">Default assumption: <span id="exampleTaxYear">2025 tax-year estimate</span>. This tool keeps scope narrow and deterministic. State taxes, tax credits, employer matching, garnishments, and highly plan-specific payroll rules are not included.</p>
-      </div>
-    </section>
+  <section class="section-card">
+    <h1>Take-Home Salary Calculator</h1>
+    <p>This shows what actually hits your bank account — and why it's lower than your salary.</p>
+    <form id="salaryForm" class="calc-form">
+      <div class="form-row"><label for="grossSalary">Gross annual salary ($)</label><input id="grossSalary" type="number" min="0" step="1000" value="80000" required></div>
+      <div class="form-row"><label for="filingStatus">Filing status</label><select id="filingStatus"><option value="single">Single</option><option value="married">Married filing jointly</option><option value="hoh">Head of household</option></select></div>
+      <div class="form-row"><label for="retirementPct">401(k) contribution (%)</label><input id="retirementPct" type="number" min="0" max="100" step="0.5" value="6"></div>
+      <div class="form-row"><label for="monthlyHealth">Health insurance ($/month)</label><input id="monthlyHealth" type="number" min="0" step="50" value="300"></div>
+      <div class="form-row"><label for="otherPretax">Other pre-tax deductions ($/yr)</label><input id="otherPretax" type="number" min="0" step="100" value="0"></div>
+      <div class="form-row"><label for="otherPosttax">Other post-tax deductions ($/yr)</label><input id="otherPosttax" type="number" min="0" step="100" value="0"></div>
+      <div class="form-row"><label for="payFrequency">Pay frequency</label><select id="payFrequency"><option value="biweekly">Bi-weekly</option><option value="semimonthly">Semi-monthly</option><option value="monthly">Monthly</option><option value="weekly">Weekly</option></select></div>
+      <button type="submit">Calculate take-home pay</button>
+    </form>
+  </section>
 
-    <section>
-      <div class="section-card">
-        <h2>When This Calculator Is Useful</h2>
-        <p>This calculator is useful when you want to estimate your net take-home pay before accepting a job offer, changing your retirement contribution rate, or adjusting benefit elections. It helps you model how federal income tax, FICA, and pre-tax or post-tax deductions affect your actual paycheck under 2025 tax rules.</p>
-      </div>
-    </section>
+  <section class="section-card">
+    <h2>Your breakdown</h2>
+    <div class="result-box"><span class="result-label">Gross salary</span><span id="grossSalary" class="result-value">$0.00</span></div>
+    <div class="result-box"><span class="result-label">Retirement contribution</span><span id="retirementContribution" class="result-value">$0.00</span></div>
+    <div class="result-box"><span class="result-label">Health insurance deduction</span><span id="healthInsurance" class="result-value">$0.00</span></div>
+    <div class="result-box"><span class="result-label">Other pre-tax deductions</span><span id="otherPretax" class="result-value">$0.00</span></div>
+    <div class="result-box"><span class="result-label">Total pre-tax deductions</span><span id="totalPretax" class="result-value">$0.00</span></div>
+    <div class="result-box"><span class="result-label">Taxable income</span><span id="taxableIncome" class="result-value">$0.00</span></div>
+    <div class="result-box"><span class="result-label">Federal income tax</span><span id="federalTax" class="result-value">$0.00</span></div>
+    <div class="result-box"><span class="result-label">Social Security tax</span><span id="socialSecurityTax" class="result-value">$0.00</span></div>
+    <div class="result-box"><span class="result-label">Medicare tax</span><span id="medicareTax" class="result-value">$0.00</span></div>
+    <div class="result-box"><span class="result-label">Additional Medicare tax</span><span id="additionalMedicareTax" class="result-value">$0.00</span></div>
+    <div class="result-box"><span class="result-label">Total FICA</span><span id="totalFica" class="result-value">$0.00</span></div>
+    <div class="result-box"><span class="result-label">Other post-tax deductions</span><span id="otherPosttax" class="result-value">$0.00</span></div>
+    <div class="result-box highlight"><span class="result-label"><strong>Take-home pay (annual)</strong></span><span id="netAnnual" class="result-value">$0.00</span></div>
+    <div class="result-box"><span class="result-label">Take-home pay (monthly)</span><span id="netMonthly" class="result-value">$0.00</span></div>
+    <div class="result-box"><span id="perPaycheckLabel" class="result-label">Take-home pay per paycheck</span><span id="netPerPaycheck" class="result-value">$0.00</span></div>
+    <p class="notice">Default assumption: <span id="exampleTaxYear">2025 tax-year estimate</span>. Federal-only. State taxes, credits, and itemized deductions are not included.</p>
+  </section>
 
-    <section>
-      <div class="section-card">
-        <h2>What This Calculator Does</h2>
-        <p>This calculator estimates net salary after federal withholding and common paycheck deductions. It starts with gross annual salary, applies pre-tax deductions such as a traditional retirement contribution, health insurance, and other pre-tax benefits, then estimates federal income tax and FICA. It also subtracts any post-tax deduction amount you enter per paycheck.</p>
-        <p>The output shows estimated net annual salary, estimated net monthly salary, and estimated take-home pay per paycheck based on the pay frequency you selected. It is built for planning and comparison, not payroll processing.</p>
-      </div>
-    </section>
+  <div class="adsense-unit" data-active="false" aria-label="Ad slot (inactive)"></div>
 
-    <section>
-      <div class="section-card">
-        <h2>Example Calculation</h2>
-        <table class="example-table">
-          <tr><th>Input</th><th>Example</th></tr>
-          <tr><td>Annual salary</td><td>$90,000</td></tr>
-          <tr><td>Filing status</td><td>Single</td></tr>
-          <tr><td>Pay frequency</td><td>Bi-weekly</td></tr>
-          <tr><td>Retirement contribution</td><td>6% of salary = $5,400</td></tr>
-          <tr><td>Health insurance</td><td>$150/month = $1,800 annually</td></tr>
-          <tr><td>Other pre-tax deductions</td><td>$1,200 annually</td></tr>
-          <tr><td>Other post-tax deductions</td><td>$35 × 26 paychecks = $910 annually</td></tr>
-          <tr><td>Output</td><td>Estimated annual net salary, monthly net salary, and net pay per paycheck</td></tr>
-        </table>
-      </div>
-    </section>
+  <section class="page-copy">
 
-    <section>
-      <div class="section-card">
-        <h2>Formula</h2>
-        <p><strong>Total Pre-Tax Deductions</strong> = Retirement Contributions + Annual Health Insurance Deductions + Other Pre-Tax Deductions</p>
-        <p><strong>Federal Taxable Wages</strong> = Gross Salary − Total Pre-Tax Deductions</p>
-        <p><strong>Taxable Income</strong> = Federal Taxable Wages − Standard Deduction</p>
-        <p><strong>Federal Income Tax</strong> = Sum of each tax bracket slice × its tax rate</p>
-        <p><strong>FICA Wages (estimated)</strong> = Gross Salary − Health Insurance Deductions − Other Pre-Tax Deductions</p>
-        <p><strong>Estimated Net Salary</strong> = Gross Salary − Federal Income Tax − FICA − Total Pre-Tax Deductions − Total Post-Tax Deductions</p>
-        <p><strong>Net Pay Per Paycheck</strong> = Estimated Net Salary ÷ Number of Paychecks</p>
-      </div>
-    </section>
+    <h2>Why your paycheck feels smaller than your salary</h2>
+    <p>You signed for $80,000. Your first biweekly check was $2,300 — that's $59,800 a year. Where'd the other $20K go?</p>
+    <p>The gap between "my salary" and "what I actually see" is the entire point of this tool. Most people never trace the line from gross to net. They just feel the shortfall and assume something went wrong. Usually, nothing went wrong. The math is just brutal and nobody walked you through it.</p>
 
-    <section>
-      <div class="section-card">
-        <h2>Calculation Methodology</h2>
-        <p>This calculator uses a deterministic estimate flow. First, it annualizes entered deductions, including retirement contributions as a percentage of salary, monthly health insurance deductions, other annual pre-tax deductions, and other post-tax deductions per paycheck. It then estimates federal taxable wages by subtracting entered pre-tax deductions from gross salary and applies the standard deduction tied to the selected filing status.</p>
-        <p>Next, it estimates federal income tax using progressive U.S. federal tax brackets. FICA is estimated separately using Social Security tax up to the annual wage base and Medicare tax on wages. The model then subtracts estimated federal tax, estimated FICA, total pre-tax deductions, and total post-tax deductions from gross salary to estimate annual net pay. That annual figure is converted into monthly net salary and net pay per paycheck using the selected pay frequency. All calculations run locally in the browser and no personal data is collected or stored.</p>
-      </div>
-    </section>
+    <h2>Where your money actually goes</h2>
+    <p>Your paycheck doesn't start from your gross salary and subtract one big number. It gets chipped away in stages:</p>
+    <ul>
+      <li><strong>First</strong>, pre-tax deductions come out: your 401(k), health insurance, FSAs and HSAs. These reduce what the IRS sees as your income.</li>
+      <li><strong>Then</strong> the standard deduction comes off the top — $15,750 if you're single. The IRS says "the first $15,750 is free."</li>
+      <li><strong>Then</strong> federal income tax hits what's left — not your full salary, just your taxable income.</li>
+      <li><strong>Then</strong> FICA takes its cut in three pieces: Social Security (6.2%), Medicare (1.45%), and Additional Medicare (0.9% above $200K). FICA is calculated on your gross wages, not your taxable income.</li>
+      <li><strong>Then</strong> any post-tax deductions come out — Roth contributions, garnishments, union dues.</li>
+      <li><strong>What's left</strong> is your take-home. That's the number that actually hits your bank account.</li>
+    </ul>
 
-    <section>
-      <div class="section-card">
-        <h2>Common Scenarios</h2>
-        <ul class="list-tight">
-          <li>Comparing two job offers where benefit deductions are different.</li>
-          <li>Estimating the real paycheck effect of increasing a 401(k) contribution.</li>
-          <li>Planning monthly cash flow after benefits and payroll deductions.</li>
-          <li>Checking whether a salary increase changes take-home pay enough to matter.</li>
-        </ul>
-      </div>
-    </section>
+    <h2>Why your taxable income isn't your salary</h2>
+    <p>This is where most people get it wrong. They think "I make $80K, so I'm in the 22% bracket." But the 22% bracket applies to your <em>taxable income</em>, not your gross salary.</p>
+    <p>Here's the difference: $80,000 salary minus $15,750 standard deduction (single) = $64,250 taxable income. If you contribute to a 401(k) or pay for health insurance pre-tax, your taxable income drops even further. The bracket rate never touches the full $80K — only what's left after deductions.</p>
+    <p>This is why two people making the same salary can owe very different amounts in federal tax.</p>
 
-    <section>
-      <div class="section-card">
-        <h2>FAQ</h2>
-        <table class="faq-table">
-          <tr><th>Question</th><th>Answer</th></tr>
-          <tr><td>How is this different from an after-tax salary calculator?</td><td>This version goes further by subtracting common paycheck deductions such as retirement contributions, health insurance, and other entered pre-tax or post-tax deductions.</td></tr>
-          <tr><td>Does this include state taxes?</td><td>No. This version is federal-only and keeps the output deterministic.</td></tr>
-          <tr><td>Can I choose a paycheck frequency?</td><td>Yes. You can switch between weekly, bi-weekly, semi-monthly, and monthly pay schedules.</td></tr>
-          <tr><td>Will this match my employer payroll exactly?</td><td>No. Real payroll can differ because of employer plan rules, credits, local taxes, and withholding elections.</td></tr>
-        </table>
-      </div>
-    </section>
+    <h2>Example: what an $80K salary actually turns into</h2>
+    <p>$80,000 — that's your salary. What your offer letter says. But your paycheck doesn't start from $80,000.</p>
 
-    <section>
-      <div class="section-card">
-        <h2>Related Calculators</h2>
-        <p>Use the footer below to move to related live tools in the network.</p>
-      </div>
-    </section>
-  </main>
+    <div class="section-card" style="background:#fafafa">
+      <div class="breakdown-line"><strong>Gross salary</strong> $80,000</div>
+      <div class="breakdown-line"><strong>401(k) at 6%</strong> −$4,800</div>
+      <div class="breakdown-line"><strong>Health insurance</strong> −$3,600 ($300/mo)</div>
+      <div class="breakdown-line"><strong>Adjusted gross</strong> $71,600</div>
+      <div class="breakdown-line"><strong>Standard deduction (single)</strong> −$15,750</div>
+      <div class="breakdown-line"><strong>Taxable income</strong> $55,850</div>
+      <div class="breakdown-line" style="padding-top:8px"><strong>Federal tax on $55,850:</strong></div>
+      <div class="breakdown-line" style="padding-left:20px">10% on first $11,925 = $1,193</div>
+      <div class="breakdown-line" style="padding-left:20px">12% from $11,926 to $48,475 = $4,386</div>
+      <div class="breakdown-line" style="padding-left:20px">22% on remaining $7,375 = $1,623</div>
+      <div class="breakdown-line"><strong>Total federal tax</strong> $7,201</div>
+      <div class="breakdown-line" style="padding-top:8px"><strong>FICA:</strong></div>
+      <div class="breakdown-line" style="padding-left:20px">Social Security (6.2% of $80,000) = $4,960</div>
+      <div class="breakdown-line" style="padding-left:20px">Medicare (1.45% of $80,000) = $1,160</div>
+      <div class="breakdown-line"><strong>Total FICA</strong> $6,120</div>
+      <div class="breakdown-line" style="padding-top:8px"><strong>Total removed</strong> $4,800 + $3,600 + $7,201 + $6,120 = $21,721</div>
+      <div class="breakdown-total">Take-home: $80,000 − $21,721 = $58,279/year</div>
+      <div class="breakdown-line">Per biweekly paycheck: ~$2,242</div>
+    </div>
+
+    <p>You expected $80K to feel like $80K. It feels like $58K. That's not a mistake. That's the math.</p>
+
+    <h2>Why two people making the same salary take home different amounts</h2>
+    <p>Imagine two people both earning $80,000:</p>
+    <ul>
+      <li>Person A is single, no 401(k), cheap health plan. Take-home: ~$60K.</li>
+      <li>Person B is single, maxing 401(k) contributions, expensive family health plan. Take-home: ~$48K.</li>
+    </ul>
+    <p>Same salary. $12,000 difference in take-home. Filing status matters too — married filing jointly gets a $31,500 standard deduction, nearly double the single deduction. Head of household gets $25,000. And if you earn above $200,000, Additional Medicare kicks in at 0.9% on the excess.</p>
+    <p>The salary on the offer letter is the starting point. The number that matters is what hits your account.</p>
+
+    <h2>When this number can still be off</h2>
+    <p>This calculator estimates federal tax using standard deductions only. It does not include:</p>
+    <ul>
+      <li>State or local income taxes (some states take another 5–13%)</li>
+      <li>Tax credits (EITC, child tax credit, education credits)</li>
+      <li>Itemized deductions (mortgage interest, charitable contributions, SALT)</li>
+      <li>RSU vesting, stock options, or equity compensation</li>
+      <li>Bonus withholding rates (supplemental wages are taxed differently)</li>
+      <li>Employer 401(k) match (this doesn't reduce your paycheck but increases total compensation)</li>
+      <li>HSA or FSA contributions</li>
+    </ul>
+    <p>The number you get here is directionally correct for federal-only take-home. It is not a substitute for a real pay stub or W-4 calculation.</p>
+
+    <h2>How to think about this before accepting a job</h2>
+    <p>Don't compare gross offers. Compare take-home.</p>
+    <p>A $75,000 job with a 5% 401(k) match, cheap health insurance, and no state income tax might net you more than an $85,000 job with expensive benefits in a high-tax state. The offer letter doesn't tell you that — the take-home number does.</p>
+    <p>Before you sign, run both offers through this tool. Adjust the 401(k) percentage, health insurance cost, and filing status for each. The number that matters is what hits your account on payday — not what's printed on the offer.</p>
+    <p>This depends on your deductions, your pay frequency, and your specific situation. You need to check yours.</p>
+
+    <h2>Data Sources</h2>
+    <ul>
+      <li>Federal tax brackets and standard deductions: IRS Revenue Procedure 2024-40 (2025 tax year)</li>
+      <li>Standard deduction: $15,750 single / $31,500 married filing jointly / $25,000 head of household</li>
+      <li>Social Security wage base: $176,100 (SSA, 2025)</li>
+      <li>FICA rates: Social Security 6.2%, Medicare 1.45%, Additional Medicare 0.9% above $200,000</li>
+    </ul>
+
+    <h2>Limitations</h2>
+    <ul>
+      <li>Federal-only — no state or local taxes</li>
+      <li>Standard deduction only — no itemized deductions</li>
+      <li>No tax credits modeled</li>
+      <li>Additional Medicare: 0.9% on wages exceeding $200,000, applied only to the excess, never exceeds total wages</li>
+      <li>Does not account for RSUs, stock options, commission, or supplemental withholding</li>
+      <li>Employer 401(k) match not included (does not reduce paycheck)</li>
+      <li>2025 tax year values only</li>
+    </ul>
+
+  </section>
+
+</main>
+
 <footer class="site-footer">
-    <div class="container" id="site-footer"></div>
-  </footer>
-  <script src="/assets/config.js"></script>
-  <script src="/assets/network.js"></script>
-  <script src="/assets/footer.js"></script>
-  <script src="/assets/ads.js"></script>
-  <script src="/assets/app.js"></script>
+  <div class="container">
+    <div id="related-calculators"></div>
+    <div id="site-footer"></div>
+  </div>
+</footer>
+
+<script src="/assets/config.js"></script>
+<script src="/assets/network.js"></script>
+<script src="/assets/ads.js"></script>
+<script src="/assets/app.js"></script>
 </body>
 </html>
